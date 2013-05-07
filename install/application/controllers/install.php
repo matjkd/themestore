@@ -33,7 +33,9 @@ class Install extends CI_Controller {
 		
 		
 		$this->load->library('form_validation');
-		$this->load->helper(array('form', 'file'));
+		$this->load->helper(array('form', 'file', 'url'));
+		
+		
 		
 		$this->form_validation->set_rules('hostname', 'Hostname', 'required');
 		$this->form_validation->set_rules('database', 'Database Name', 'required');
@@ -59,6 +61,7 @@ class Install extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['errors']	= validation_errors();
+			
 			$this->load->view('install', $data);
 		}
 		else

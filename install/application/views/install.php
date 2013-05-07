@@ -25,11 +25,11 @@
 		<?php endif;?>
 		<?php if($errors):?>
 			<div class="alert alert-error">
-				<?php echo $errors;?>
+			<?php echo $errors;?>
 			</div>
 		<?php endif;?>
 			
-		<?php echo form_open('/');?>
+		<?php echo form_open(base_url());?>
 
 			<fieldset>
 				<legend>Database Information</legend>
