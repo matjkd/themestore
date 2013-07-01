@@ -477,6 +477,8 @@ class Checkout extends CI_Controller {
 			{
 				// send them back to the checkout page with the error
 				$this->session->set_flashdata('error', $error_status);
+				//echo $error_status;
+				//stop();
 				redirect('checkout');
 			}
 			

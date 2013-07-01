@@ -1176,6 +1176,8 @@ class go_cart {
 		foreach ($this->_cart_contents['items'] as $item)
 		{
 			$contents[]				= serialize($item);
+			
+					
 		}
 		
 		// save the order content
@@ -1183,6 +1185,17 @@ class go_cart {
 	
 		// dont do anything else if the order failed to save
 		if(!$order_id) return false;
+		
+		foreach ($this->_cart_contents['items'] as $item)
+		{
+			
+			//save the earnings to the earnings table
+			echo "order id -".$order_id." product Owner".$item['product_owner']."  itemID:".$item['id'].":".$item['subtotal']."<br>";
+			
+		}
+		
+		stop();
+		
 
 						
 		// Process any per-item operations
@@ -1218,7 +1231,8 @@ class go_cart {
 			{
 				$product		= $this->CI->Product_model->get_product($item['id']);
 				$new_quantity	= intval($product->quantity) - intval($item['quantity']);
-				$product_quantity	= array('id'=>$product->id, 'quantity'=>$new_quantity);
+				$new_sales	= intval($product->sales) + intval($item['quantity']);
+				$product_quantity	= array('id'=>$product->id, 'quantity'=>$new_quantity, 'sales'=>$new_sales);
 				$this->CI->Product_model->save($product_quantity);
 			}
 		}

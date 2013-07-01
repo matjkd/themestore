@@ -1,5 +1,6 @@
 <?php include('header.php');?>
-
+<section class='section-wrapper post-w'>
+	<div class='container'>
 <?php if(validation_errors()):?>
 <div class="alert allert-error">
 	<a class="close" data-dismiss="alert">×</a>
@@ -225,4 +226,5 @@ $confirm	= array('id'=>'confirm', 'class'=>'span2', 'name'=>'confirm', 'value'=>
 
 <div id="address-form-container" class="hide">
 </div>
+</div></section>
 <?php include('footer.php');

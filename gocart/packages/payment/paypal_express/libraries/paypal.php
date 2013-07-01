@@ -156,6 +156,9 @@ class PayPal {
 		if (!$result) return false;
 		$response = $result->getContent();
 		$return = $this->responseParse($response);
+		echo "<pre>";
+		print_r($return);
+		echo "</pre>";
 
 		if ($return['ACK'] == 'Success') {
 			header('Location: '.$this->gate.'cmd=_express-checkout&useraction=commit&token='.$return['TOKEN'].'');

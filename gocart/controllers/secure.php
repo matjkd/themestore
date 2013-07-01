@@ -28,7 +28,7 @@ class Secure extends CI_Controller {
 		force_ssl();
 		
 		$this->load->library('Go_cart');
-		$this->load->model(array('Page_model', 'Product_model', 'Option_model','location_model'));
+		$this->load->model(array('Page_model', 'Product_model', 'Option_model','location_model', 'earnings_model'));
 		$this->load->helper('form_helper');
 		
 		$this->customer = $this->go_cart->customer();
@@ -326,6 +326,15 @@ class Secure extends CI_Controller {
 		$this->load->view('forgot_password', $data);
 	}
 	
+	function add_template($id = false)
+	{
+		//make sure they're logged in
+		$this->Customer_model->is_logged_in('secure/my_account/');
+		
+		$this->load->view('submit_template');
+	}
+	
+	
 	function my_account($offset=0)
 	{
 		//make sure they're logged in
@@ -389,6 +398,7 @@ class Secure extends CI_Controller {
 		$data['orders']		= $this->order_model->get_customer_orders($this->customer['id'], $offset);
 
 		
+		$data['earnings']	= $this->earnings_model->get_earnings(1);
 		//if they're logged in, then we have all their acct. info in the cookie.
 		
 		
@@ -401,6 +411,7 @@ class Secure extends CI_Controller {
 		$this->form_validation->set_rules('firstname', 'First Name', 'trim|required|max_length[32]');
 		$this->form_validation->set_rules('lastname', 'Last Name', 'trim|required|max_length[32]');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|max_length[128]|callback_check_email');
+		$this->form_validation->set_rules('paypal_email', 'Paypal Email', 'trim|required|valid_email|max_length[128]|callback_check_email');
 		$this->form_validation->set_rules('phone', 'Phone', 'trim|required|max_length[32]');
 		$this->form_validation->set_rules('email_subscribe', 'Subscribe', 'trim|numeric|max_length[1]');
 
@@ -430,6 +441,7 @@ class Secure extends CI_Controller {
 			$customer['lastname']				= $this->input->post('lastname');
 			$customer['email']					= $this->input->post('email');
 			$customer['phone']					= $this->input->post('phone');
+			$customer['paypal_email']			= $this->input->post('paypal_email');
 			$customer['email_subscribe']		= intval((bool)$this->input->post('email_subscribe'));
 			if($this->input->post('password') != '')
 			{

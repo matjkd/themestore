@@ -82,6 +82,8 @@ class Cart extends CI_Controller {
 		$this->load->view('page', $data);
 	}
 	
+	
+	
 	function search($code=false, $page = 0)
 	{
 		$this->load->model('Search_model');
