@@ -46,9 +46,17 @@
 				<?php foreach($product->images as $image):?>
 				<img class="span1" onclick="$(this).squard('390', $('#primary-img'));" src="<?php echo base_url('uploads/images/medium/'.$image->filename);?>"/>
 				<?php endforeach;?>
+				
 			</div>
 		</div>
 		<?php endif;?>
+		
+		<div class="row">
+			<div class="span4">
+				<h4><a href="http://<?=$product->demo_url?>" target="_blank">Preview Template</a></h4>
+			</div>
+				
+		</div>
 		
 			<?php if(!empty($product->related_products)):?>
 			<div class="related_products">
@@ -206,7 +214,7 @@
 											}?>
 
 											<option<?php echo $selected;?> value="<?php echo $values->id;?>">
-												<?php echo($values->price != 0)?'('.format_currency($values->price).') ':''; echo $values->name;?>
+												<?php echo($values->price != 0)?'(+'.format_currency($values->price).') ':''; echo $values->name;?>
 											</option>
 
 										<?php endforeach;?>
@@ -224,7 +232,7 @@
 											}?>
 											<label class="radio">
 												<input<?php echo $checked;?> type="radio" name="option[<?php echo $option->id;?>]" value="<?php echo $values->id;?>"/>
-												<?php echo $option->name;?> <?php echo($values->price != 0)?'('.format_currency($values->price).') ':''; echo $values->name;?>
+												<?php echo $option->name;?> <?php echo($values->price != 0)?'(+'.format_currency($values->price).') ':''; echo $values->name;?>
 											</label>
 										<?php endforeach;?>
 										<?php echo $required;?>

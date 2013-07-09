@@ -6,42 +6,20 @@
                       <div class='footer-logo'>
                         <a>Bootstrap<strong>Sauce</strong></a>
                       </div>
-                      <ul class='footer-address'>
-                        <li>
-                          <strong>Address:</strong>
-                          2850 Collins ave<br/>
-                          Camden, NJ 32432-1343, USA
-                        </li>
-                        <li>
-                          <strong>Phone:</strong>
-                          (324) 234-2343
-                        </li>
-                        <li>
-                          <strong>Fax:</strong>
-                          (324) 366-5423
-                        </li>
-                      </ul>
-                    </div>
-                    <div class='span4'>
-                      <h5 class='footer-header'>Recent Posts</h5>
-                      <ul class='footer-list'>
-                        <li>
-                          <a>Vestibulum auctor dapibus</a>
-                        </li>
-                        <li>
-                          <a>Aliquam tincidunt mauris</a>
-                        </li>
-                        <li>
-                          <a>Lorem ipsum dolor sit</a>
-                        </li>
-                        <li>
-                          <a>Consectetur adipisicing elit</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class='span4'>
-                      <h5 class='footer-header'>Photostream</h5>
+                      <p>A brand new marketplace for Twitter Bootstrap templates.</p>
                       
+                    </div>
+                    <div class='span4'>
+                      <h5 class='footer-header'>About Twitter Bootstrap</h5>
+                      <p>
+                      	Twitter Bootstrap is a powerful front-end framework for faster and easier web development
+                      </p>
+                    </div>
+                    <div class='span4'>
+                      
+                      <p>
+                      	
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -54,21 +32,17 @@
                     </div>
                     <div class='span6'>
                       <ul class='footer-links'>
-                        <li>
-                          <a>Some</a>
+                       
+                         <li>
+                          <a href="<?=base_url()?>submission-guidelines">Submission Guidelines</a>
                         </li>
                         <li>
-                          <a>Footer</a>
+                          <a href="<?=base_url()?>privacy-policy">Policy</a>
                         </li>
                         <li>
-                          <a>Policy</a>
+                          <a href="<?=base_url()?>terms-of-use">Terms of Use</a>
                         </li>
-                        <li>
-                          <a>Terms Of Use</a>
-                        </li>
-                        <li>
-                          <a>Links</a>
-                        </li>
+                       
                       </ul>
                     </div>
                   </div>

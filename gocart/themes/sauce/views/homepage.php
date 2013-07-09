@@ -7,7 +7,7 @@
                     <h1 class='slider-header'>All the things for Twitter Bootstrap</h1>
                     <h2 class='slider-sub-header'>Purchase Professional Bootstrap Templates.</h2>
                     <div class='cta'>
-                      <a href="features/pricing_tables.html" class="btn btn-cta">View all Themes</a>
+                      <a href="bootstrap-templates" class="btn btn-cta">View all Themes</a>
                     </div>
                     <div class='slider-browsers-w clearfix'>
                       <div class='slider-browser slider-browser-left hidden-phone' data-position-bottom='-8%'>
@@ -25,7 +25,7 @@
                 <div class='active item'>
                   <div class='container'>
                     <h1 class='slider-header'>We need Designers. Sell your templates here.</h1>
-                    <h2 class='slider-sub-header'>Earn 55% on all templates regardless of exclusivity.</h2>
+                    <h2 class='slider-sub-header'>Earn a minimum of 55% on all templates sold regardless of exclusivity.</h2>
                     <div class='cta'>
                     	
                       <a href="#" class="btn btn-cta btn-warning">Submit your template (coming soon)</a>

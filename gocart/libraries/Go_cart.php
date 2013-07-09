@@ -1067,6 +1067,7 @@ class go_cart {
 
 		$this->CI->load->model('order_model');
 		$this->CI->load->model('Product_model');
+		$this->CI->load->model('earnings_model');
 		
 		//prepare our data for being inserted into the database
 		$save	= array();
@@ -1188,13 +1189,18 @@ class go_cart {
 		
 		foreach ($this->_cart_contents['items'] as $item)
 		{
+				
+			$referrer_id = $this->CI->earnings_model->get_referrer($save['customer_id']);
+			
+			$value = $item['subtotal'] - $save['coupon_discount'] - $save['gift_card_discount'];
+			//echo "referred by: ".$referrer_id;
 			
 			//save the earnings to the earnings table
-			echo "order id -".$order_id." product Owner".$item['product_owner']."  itemID:".$item['id'].":".$item['subtotal']."<br>";
-			
+			//echo "order id -".$order_id." product Owner".$item['product_owner']."  itemID:".$item['id'].":".$item['subtotal']." customerID -".$save['customer_id']."<br>";
+			$this->CI->earnings_model->save_earnings($order_id, $item['product_owner'], $item['id'], $value, $referrer_id);
 		}
 		
-		stop();
+		
 		
 
 						

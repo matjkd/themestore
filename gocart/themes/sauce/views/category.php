@@ -8,7 +8,7 @@
 	
 	<?php if(!empty($category->description)): ?>
 	<div class="row">
-		<div class="span12"><?php echo $category->description; ?></div>
+		<div class="span12"><h4><?php echo $category->description; ?></h4></div>
 	</div>
 	<?php endif; ?>
 	
@@ -56,7 +56,7 @@
 				<br style="clear:both;"/>
 				<ul class="thumbnails category_container">
 				<?php foreach($products as $product):?>
-					<li class="span3 product">
+					<li class="span4 product">
 						<?php
 						$photo	= theme_img('no_picture.png', lang('no_image_available'));
 						$product->images	= array_values($product->images);
@@ -72,7 +72,7 @@
 								}
 							}
 
-							$photo	= '<img src="'.base_url('uploads/images/thumbnails/'.$primary->filename).'" alt="'.$product->seo_title.'"/>';
+							$photo	= '<img src="'.base_url('uploads/images/medium/'.$primary->filename).'" alt="'.$product->seo_title.'"/>';
 						}
 						?>
 						<a class="thumbnail" href="<?php echo site_url(implode('/', $base_url).'/'.$product->slug); ?>">

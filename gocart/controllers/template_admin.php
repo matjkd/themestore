@@ -28,7 +28,7 @@ class Template_admin extends CI_Controller {
 		force_ssl();
 		
 		$this->load->library('Go_cart');
-		$this->load->model(array('Page_model', 'Product_model', 'Option_model','location_model'));
+		$this->load->model(array('Page_model', 'Product_model', 'Option_model','location_model', 'Themes_model'));
 		$this->load->helper('form_helper');
 		
 		$this->customer = $this->go_cart->customer();
@@ -55,8 +55,94 @@ class Template_admin extends CI_Controller {
 	{
 		//make sure they're logged in
 		$this->Customer_model->is_logged_in('secure/my_account/');
+		$data['customer_id'] = $this->customer['id'];
+		if(isset($this->error) && $this->error != NULL) {
+			$data['error'] = $this->error;
+		}
 		
-		$this->load->view('submit_template');
+		$this->load->view('submit_template', $data);
+	}
+	
+	function submit_template($id = false) {
+		//make sure they're logged in
+		$this->Customer_model->is_logged_in('secure/my_account/');
+		
+		$customer_id = $this->customer['id'];
+		
+		$this->load->library('form_validation');
+		
+		$this->form_validation->set_rules('name', 'Template Name', 'trim|required');
+		$this->form_validation->set_rules('price_single', 'Price Single', 'trim|required');
+		$this->form_validation->set_rules('price_multiple', 'Price multiple', 'trim|required');	
+		$this->form_validation->set_rules('price_extended', 'Price extended', 'trim|required');
+		$this->form_validation->set_rules('demo_url', 'Demo URL', 'trim|required');	
+		
+		$this->form_validation->set_rules('version', 'Version', 'trim|required');	
+		$this->form_validation->set_rules('description', 'description', 'trim|required');	
+		$this->form_validation->set_rules('notes', 'notes', 'trim');
+		
+		//check validation
+		if ($this->form_validation->run() == FALSE)
+		{
+			
+			$this->error = validation_errors();
+					
+			$this->add_template();
+		}
+		else
+		{
+		
+		//array
+		$submission = array(
+		
+		'customer_id' => $customer_id,
+		'template_name' => set_value('name'),
+		'price_single' => set_value('price_single'),
+		'price_multiple' => set_value('price_multiple'),
+		'price_extended' => set_value('price_extended'),
+		'description' => $this->input->post('description'),
+		'demo_location' => set_value('demo_url'),
+		'version' => set_value('version'),
+		'notes_for_reviewer' => $this->input->post('notes')
+		
+		);	
+		
+		$submit_template = $this->Themes_model->submit_theme($submission);
+		
+		$this->do_upload($submit_template);
+		
+		}
+		
+		
+	}
+	function do_upload($submit_id)
+	{
+			
+		$config['upload_path'] = 'uploads/submissions';
+		$config['allowed_types'] = 'zip|rar|jpg';
+		$config['remove_spaces'] = true;
+		
+		
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload())
+		{
+			
+			$error = array('error' => $this->upload->display_errors());
+
+			//$this->load->view('upload_form', $error);
+			echo "error:";
+			print_r($error);
+			stop();
+		}
+		else
+		{
+			$upload_data	= $this->upload->data();
+
+			//$this->load->view('upload_success', $data);
+			echo $upload_data['file_name'];
+			
+		}
 	}
 	
 	

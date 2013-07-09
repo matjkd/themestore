@@ -334,7 +334,74 @@ class Secure extends CI_Controller {
 		$this->load->view('submit_template');
 	}
 	
+	function order_history($offset=0)
+	{
+		//make sure they're logged in
+		$this->Customer_model->is_logged_in('secure/my_account/');
 	
+		$data['gift_cards_enabled']	= $this->gift_cards_enabled;
+		
+		$data['customer']			= (array)$this->Customer_model->get_customer($this->customer['id']);
+			
+		$data['addresses'] 			= $this->Customer_model->get_address_list($this->customer['id']);
+		
+		$data['page_title']			= 'Welcome '.$data['customer']['firstname'].' '.$data['customer']['lastname'];
+		$data['customer_addresses']	= $this->Customer_model->get_address_list($data['customer']['id']);
+		
+		// load other page content 
+		//$this->load->model('banner_model');
+		$this->load->model('order_model');
+		$this->load->helper('directory');
+		$this->load->helper('date');
+		
+		//if they want to limit to the top 5 banners and use the enable/disable on dates, add true to the get_banners function
+	//	$data['banners']	= $this->banner_model->get_banners();
+	//	$data['ads']		= $this->banner_model->get_banners(true);
+		$data['categories']	= $this->Category_model->get_categories_tierd(0);
+		
+		
+		// paginate the orders
+		$this->load->library('pagination');
+
+		$config['base_url'] = site_url('secure/my_account');
+		$config['total_rows'] = $this->order_model->count_customer_orders($this->customer['id']);
+		$config['per_page'] = '15'; 
+	
+		$config['first_link'] = 'First';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+		$config['last_link'] = 'Last';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+
+		$config['full_tag_open'] = '<div class="pagination"><ul>';
+		$config['full_tag_close'] = '</ul></div>';
+		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+
+		$config['prev_link'] = '&laquo;';
+		$config['prev_tag_open'] = '<li>';
+		$config['prev_tag_close'] = '</li>';
+
+		$config['next_link'] = '&raquo;';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+		
+		$this->pagination->initialize($config); 
+		$data['orders_pagination'] = $this->pagination->create_links();
+
+		$data['orders']		= $this->order_model->get_customer_orders($this->customer['id'], $offset);
+
+		
+		$data['earnings']	= $this->earnings_model->get_customer_earnings($this->customer['id']);
+		$data['affiliate_earnings']	= $this->earnings_model->get_affiliate_earnings($this->customer['id']);
+		
+		$this->load->view('order_history', $data);
+		
+	}
 	function my_account($offset=0)
 	{
 		//make sure they're logged in
@@ -398,7 +465,9 @@ class Secure extends CI_Controller {
 		$data['orders']		= $this->order_model->get_customer_orders($this->customer['id'], $offset);
 
 		
-		$data['earnings']	= $this->earnings_model->get_earnings(1);
+		$data['earnings']	= $this->earnings_model->get_customer_earnings($this->customer['id']);
+		$data['affiliate_earnings']	= $this->earnings_model->get_affiliate_earnings($this->customer['id']);
+		
 		//if they're logged in, then we have all their acct. info in the cookie.
 		
 		

@@ -9970,8 +9970,14 @@ table.no-margin {
   color: #fff;
 }
 .jumbotron {
-  background: #fff;
+  background: rgb(66, 66, 66);
   border-bottom: 1px dashed #9ad1f0;
+}
+.jumbotron h1 {
+	color:#fff;
+}
+.jumbotron p {
+	color:#ddd;
 }
 .jumbotron .container {
   background: transparent url('docs-help-icon.png') right top no-repeat;

@@ -15,7 +15,7 @@
 <meta name="Keywords" content="Shopping Cart, eCommerce, Code Igniter">
 <meta name="Description" content="Go Cart is an open source shopping cart built on the Code Igniter framework">
 <?php endif;?>
-
+<meta name="google-site-verification" content="nbDyLT7jznwj4egEpTqoKISexYJWG0v1rVyXj-cw_80" />
 
 <?php echo theme_css('theme_venera_blue.css', true);?>
 <?php echo theme_css('styles.css', true);?>
@@ -68,17 +68,13 @@
 								<?php endforeach;?>
 							</ul>
                         </li>
-                        	<?php foreach($this->pages as $menu_page):?>
-
-								<li>
-								<?php if(empty($menu_page->content)):?>
-									<a href="<?php echo $menu_page->url;?>" <?php if($menu_page->new_window ==1){echo 'target="_blank"';} ?>><?php echo $menu_page->menu_title;?></a>
-								<?php else:?>
-									<a href="<?php echo site_url($menu_page->slug);?>"><?php echo $menu_page->menu_title;?></a>
-								<?php endif;?>
-								</li>
-								
-							<?php endforeach;?>
+                        <li>
+                        	<a href="<?=base_url()?>about">About</a>
+                        </li>
+                         <li>
+                        	<a href="<?=base_url()?>sauce-cms">Sauce CMS</a>
+                        </li>
+                        	
                         
                       </ul>
                      

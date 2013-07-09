@@ -1,5 +1,9 @@
 <?php include('header.php');?>
+
+<?php include('admin_menu.php');?>
 <section class='section-wrapper post-w'>
+	
+	
 	<div class='container'>
 <?php if(validation_errors()):?>
 <div class="alert allert-error">
@@ -146,16 +150,21 @@ $confirm	= array('id'=>'confirm', 'class'=>'span2', 'name'=>'confirm', 'value'=>
 	</div>
 	
 	<div class="span7 pull-right">
-		<div class="row" style="padding-top:10px;">
-			<div class="span4">
+		
+	</div>
+
+<div class="row-fluid">
+	<div class="span12">
+		<div class="row-fluid" style="padding-top:10px;">
+			<div class="span8">
 				<h2><?php echo lang('address_manager');?></h2>
 			</div>
-			<div class="span3" style="text-align:right;">
+			<div class="span4" style="text-align:right;">
 				<input type="button" class="btn edit_address" rel="0" value="<?php echo lang('add_address');?>"/>
 			</div>
 		</div>
-		<div class="row">
-			<div class="span7" id='address_list'>
+		<div class="row-fluid">
+			<div class="span12" id='address_list'>
 			<?php if(count($addresses) > 0):?>
 				<table class="table table-bordered table-striped">
 			<?php
@@ -193,59 +202,10 @@ $confirm	= array('id'=>'confirm', 'class'=>'span2', 'name'=>'confirm', 'value'=>
 			</div>
 		</div>
 	</div>
-
-<div class="row">
-	<div class="span12">
-		<div class="page-header">
-			<h2><?php echo lang('order_history');?></h2>
-		</div>
-		<?php if($orders):
-			echo $orders_pagination;
-		?>
-		<table class="table table-bordered table-striped">
-			<thead>
-				<tr>
-					<th><?php echo lang('order_date');?></th>
-					<th><?php echo lang('order_number');?></th>
-					<th><?php echo lang('order_status');?></th>
-				</tr>
-			</thead>
-
-			<tbody>
-			<?php
-			foreach($orders as $order): ?>
-				<tr>
-					<td>
-						<?php $d = format_date($order->ordered_on); 
-				
-						$d = explode(' ', $d);
-						echo $d[0].' '.$d[1].', '.$d[3];
-				
-						?>
-					</td>
-					<td><?php echo $order->order_number; ?></td>
-					<td><?php echo $order->status;?></td>
-				</tr>
-		
-			<?php endforeach;?>
-			</tbody>
-		</table>
-		<?php else: ?>
-			<?php echo lang('no_order_history');?>
-		<?php endif;?>
-	</div>
+	
+	
 </div>
 
-<div class="row">
-	<div class="span12">
-		<div class="page-header">
-			<h2>My Templates</h2>
-		</div>
-		
-
-
-	</div>
-</div>
 
 <div id="address-form-container" class="hide">
 </div>
