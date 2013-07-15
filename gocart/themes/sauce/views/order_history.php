@@ -1,5 +1,12 @@
 <?php include('header.php');?>
-
+<header class="jumbotron subhead" id="overview">
+          <div class="container">
+            <div class="docs-header-icon">
+              <h1>Order History</h1>
+              <p class="lead">Overview of your sales and purchases</p>
+            </div>
+          </div>
+        </header>
 <?php include('admin_menu.php');?>
 <section class='section-wrapper post-w'>
 	

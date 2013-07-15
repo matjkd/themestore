@@ -12,8 +12,8 @@
 <?php if(isset($meta)):?>
 	<?php echo $meta;?>
 <?php else:?>
-<meta name="Keywords" content="Shopping Cart, eCommerce, Code Igniter">
-<meta name="Description" content="Go Cart is an open source shopping cart built on the Code Igniter framework">
+
+<meta name="Description" content="Bootstrap Sauce is an online marketplace for Bootstrap Templates. Submit your template now.">
 <?php endif;?>
 <meta name="google-site-verification" content="nbDyLT7jznwj4egEpTqoKISexYJWG0v1rVyXj-cw_80" />
 

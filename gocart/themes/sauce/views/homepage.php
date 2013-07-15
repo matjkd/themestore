@@ -28,7 +28,7 @@
                     <h2 class='slider-sub-header'>Earn a minimum of 55% on all templates sold regardless of exclusivity.</h2>
                     <div class='cta'>
                     	
-                      <a href="#" class="btn btn-cta btn-warning">Submit your template (coming soon)</a>
+                      <a href="template_admin/add_template" class="btn btn-cta btn-warning">Submit your template</a>
                     </div>
                     <div class='row zoomed-browsers-w'>
                       <div class='span4'>

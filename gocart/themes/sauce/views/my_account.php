@@ -1,5 +1,13 @@
 <?php include('header.php');?>
 
+<header class="jumbotron subhead" id="overview">
+          <div class="container">
+            <div class="docs-header-icon">
+              <h1>My Account</h1>
+              <p class="lead">Your Account information</p>
+            </div>
+          </div>
+        </header>
 <?php include('admin_menu.php');?>
 <section class='section-wrapper post-w'>
 	

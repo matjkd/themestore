@@ -63,6 +63,18 @@ class Template_admin extends CI_Controller {
 		$this->load->view('submit_template', $data);
 	}
 	
+	function my_templates($id = false)
+	{
+		//make sure they're logged in
+		$this->Customer_model->is_logged_in('secure/my_account/');
+		$data['customer_id'] = $this->customer['id'];
+		if(isset($this->error) && $this->error != NULL) {
+			$data['error'] = $this->error;
+		}
+		$data['templates'] = $this->Themes_model->get_themes($data['customer_id']);
+		$this->load->view('my_templates', $data);
+	}
+	
 	function submit_template($id = false) {
 		//make sure they're logged in
 		$this->Customer_model->is_logged_in('secure/my_account/');
@@ -111,10 +123,18 @@ class Template_admin extends CI_Controller {
 		
 		$this->do_upload($submit_template);
 		
+		
 		}
 		
 		
 	}
+
+	function add_file()
+	{
+		$template_id = $this->input->post('template_id');
+		$this->do_upload($template_id);
+	}
+
 	function do_upload($submit_id)
 	{
 			
@@ -129,20 +149,23 @@ class Template_admin extends CI_Controller {
 		{
 			
 			$error = array('error' => $this->upload->display_errors());
-
+			$this->error = $error['error'];
 			//$this->load->view('upload_form', $error);
-			echo "error:";
-			print_r($error);
-			stop();
+			$this->my_templates();
 		}
 		else
 		{
 			$upload_data	= $this->upload->data();
 
 			//$this->load->view('upload_success', $data);
-			echo $upload_data['file_name'];
+			$filename = $upload_data['file_name'];
 			
+			//add filename to submissions
+			$this->Themes_model->update_file($submit_id, $filename);
+			$this->my_templates();
 		}
+
+
 	}
 	
 	

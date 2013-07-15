@@ -7,6 +7,7 @@
             </div>
           </div>
         </header>
+        <?php include('admin_menu.php');?>
 
 <section class='section-wrapper post-w'>
 	<div class="container">
