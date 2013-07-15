@@ -76,9 +76,9 @@
                   </div>
                   <div class='span4'>
                     <div class='info-bullet'>
-                      <i class='icon-cogs'></i>
-                      <h5>Bootstrap Sauce CMS</h5>
-                      <p>We are also developing a CMS designed around Twitter Bootstrap and Twitter Bootstrap Professional Templates. Coming Soon.</p>
+                      <i class='icon-gbp'></i>
+                      <h5>Awesome Affiliate Scheme</h5>
+                      <p>Earn 10% on all purchases made from your affiliate links, not just the first purchase.</p>
                     </div>
                   </div>
                 </div>
