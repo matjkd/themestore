@@ -93,6 +93,23 @@ class Template_admin extends CI_Controller {
 		$this->form_validation->set_rules('description', 'description', 'trim|required');	
 		$this->form_validation->set_rules('notes', 'notes', 'trim');
 		
+		
+		//array
+		$submission = array(
+		
+		'customer_id' => $customer_id,
+		'template_name' => set_value('name'),
+		'price_single' => set_value('price_single'),
+		'price_multiple' => set_value('price_multiple'),
+		'price_extended' => set_value('price_extended'),
+		'description' => set_value('description'),
+		'demo_location' => set_value('demo_url'),
+		'version' => set_value('version'),
+		'notes_for_reviewer' => set_value('notes')
+		
+		);	
+		
+		
 		//check validation
 		if ($this->form_validation->run() == FALSE)
 		{
@@ -104,20 +121,7 @@ class Template_admin extends CI_Controller {
 		else
 		{
 		
-		//array
-		$submission = array(
 		
-		'customer_id' => $customer_id,
-		'template_name' => set_value('name'),
-		'price_single' => set_value('price_single'),
-		'price_multiple' => set_value('price_multiple'),
-		'price_extended' => set_value('price_extended'),
-		'description' => $this->input->post('description'),
-		'demo_location' => set_value('demo_url'),
-		'version' => set_value('version'),
-		'notes_for_reviewer' => $this->input->post('notes')
-		
-		);	
 		
 		$submit_template = $this->Themes_model->submit_theme($submission);
 		

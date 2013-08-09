@@ -237,16 +237,16 @@ class Checkout extends CI_Controller {
 		}
 		
 		$this->form_validation->set_rules('ship_address_id', 'Shipping Address ID', 'numeric');
-		$this->form_validation->set_rules('ship_firstname', 'Shipping First Name', 'trim|required|max_length[32]');
-		$this->form_validation->set_rules('ship_lastname', 'Shipping Last Name', 'trim|required|max_length[32]');
-		$this->form_validation->set_rules('ship_email', 'Shipping Email', 'trim|required|valid_email|max_length[128]');
-		$this->form_validation->set_rules('ship_phone', 'Shipping Phone', 'trim|required|max_length[32]');
+		$this->form_validation->set_rules('ship_firstname', 'Shipping First Name', 'trim||max_length[32]');
+		$this->form_validation->set_rules('ship_lastname', 'Shipping Last Name', 'trim||max_length[32]');
+		$this->form_validation->set_rules('ship_email', 'Shipping Email', 'trim||valid_email|max_length[128]');
+		$this->form_validation->set_rules('ship_phone', 'Shipping Phone', 'trim||max_length[32]');
 		$this->form_validation->set_rules('ship_company', 'Shipping Company', 'trim|max_length[128]');	
-		$this->form_validation->set_rules('ship_address1', 'Shipping Address 1', 'trim|required|max_length[128]');
+		$this->form_validation->set_rules('ship_address1', 'Shipping Address 1', 'trim||max_length[128]');
 		$this->form_validation->set_rules('ship_address2', 'Shipping Address 2', 'trim|max_length[128]');
-		$this->form_validation->set_rules('ship_city', 'Shipping City', 'trim|required|max_length[128]');
-		$this->form_validation->set_rules('ship_country_id', 'Shipping Country', 'trim|required|numeric');
-		$this->form_validation->set_rules('ship_zone_id', 'Shipping State', 'trim|required|numeric');
+		$this->form_validation->set_rules('ship_city', 'Shipping City', 'trim||max_length[128]');
+		$this->form_validation->set_rules('ship_country_id', 'Shipping Country', 'trim||numeric');
+		$this->form_validation->set_rules('ship_zone_id', 'Shipping State', 'trim||numeric');
 
 		//if there is post data, get the country info and see if the zip code is required
 		if($this->input->post('ship_country_id'))
@@ -254,7 +254,7 @@ class Checkout extends CI_Controller {
 			$country = $this->Location_model->get_country($this->input->post('ship_country_id'));
 			if((bool)$country->postcode_required)
 			{
-				$this->form_validation->set_rules('ship_zip', 'Shipping Zip', 'trim|required|max_length[10]');
+				$this->form_validation->set_rules('ship_zip', 'Shipping Zip', 'trim||max_length[10]');
 			}
 		}
 		else
@@ -477,9 +477,9 @@ class Checkout extends CI_Controller {
 			{
 				// send them back to the checkout page with the error
 				$this->session->set_flashdata('error', $error_status);
-				//echo $error_status;
-				//stop();
-				redirect('checkout');
+				echo $error_status;
+				stop();
+				//redirect('checkout');
 			}
 			
 		}

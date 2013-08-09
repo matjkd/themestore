@@ -2,14 +2,14 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	<?php if(isset($customer['ship_address'])):?>
+	<?php // if(isset($customer['ship_address'])):?>
 		$.post('<?php echo site_url('checkout/customer_details');?>', function(data){
 			//populate the form with their information
 			$('#customer_info_fields').html(data);
 		});
-	<?php else:	?>
-		get_customer_form();
-	<?php endif;?>
+	<?php  // else:	?>
+		// get_customer_form();
+	<?php // endif;?>
 });
 
 function get_customer_form()
@@ -128,8 +128,8 @@ function submit_payment_method()
 	// verify a shipping method is chosen
 	if(shipping_required && $('input:radio[name=shipping_input]:checked').val()===undefined && $('input:radio[name=shipping_input]').length > 0)
 	{
-		display_error('shipping', '<?php echo lang('error_choose_shipping');?>');
-		errors = true;
+		//display_error('shipping', '<?php echo lang('error_choose_shipping');?>');
+		errors = false;
 	}
 		
 	// validate payment method if payment is required

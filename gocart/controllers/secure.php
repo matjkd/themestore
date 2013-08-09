@@ -173,7 +173,7 @@ class Secure extends CI_Controller {
 		$this->form_validation->set_rules('firstname', 'First Name', 'trim|required|max_length[32]');
 		$this->form_validation->set_rules('lastname', 'Last Name', 'trim|required|max_length[32]');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|max_length[128]|callback_check_email');
-		$this->form_validation->set_rules('phone', 'Phone', 'trim|required|max_length[32]');
+		$this->form_validation->set_rules('phone', 'Phone', 'trim|max_length[32]');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|sha1');
 		$this->form_validation->set_rules('confirm', 'Confirm Password', 'required|matches[password]');
 		$this->form_validation->set_rules('email_subscribe', 'Subscribe', 'trim|numeric|max_length[1]');
@@ -416,6 +416,19 @@ class Secure extends CI_Controller {
 		$data['page_title']			= 'Welcome '.$data['customer']['firstname'].' '.$data['customer']['lastname'];
 		$data['customer_addresses']	= $this->Customer_model->get_address_list($data['customer']['id']);
 		
+		//generate an affiliate ID for the user
+		if($data['customer']['affiliate_id'] == 0) {
+			
+			$email = $data['customer']['email'];	
+			$time = substr(time(), 6);
+			$affiliateID = $data['customer']['id'].$time;
+			//echo "not set yet ".$affiliateID;
+			$this->Customer_model->set_affilate_id($email, $affiliateID);
+		} else {
+			//echo $data['customer']['affiliate_id']." is set";
+		}
+		
+		
 		// load other page content 
 		//$this->load->model('banner_model');
 		$this->load->model('order_model');
@@ -481,7 +494,7 @@ class Secure extends CI_Controller {
 		$this->form_validation->set_rules('lastname', 'Last Name', 'trim|required|max_length[32]');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|max_length[128]|callback_check_email');
 		$this->form_validation->set_rules('paypal_email', 'Paypal Email', 'trim|required|valid_email|max_length[128]|callback_check_email');
-		$this->form_validation->set_rules('phone', 'Phone', 'trim|required|max_length[32]');
+		$this->form_validation->set_rules('phone', 'Phone', 'trim|max_length[32]');
 		$this->form_validation->set_rules('email_subscribe', 'Subscribe', 'trim|numeric|max_length[1]');
 
 

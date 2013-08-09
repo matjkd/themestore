@@ -18,6 +18,7 @@
 <meta name="google-site-verification" content="nbDyLT7jznwj4egEpTqoKISexYJWG0v1rVyXj-cw_80" />
 
 <?php echo theme_css('theme_venera_blue.css', true);?>
+<?php echo theme_css('markdown.css', true);?>
 <?php echo theme_css('styles.css', true);?>
 
 <?php echo theme_js('jquery-1.10.1.min.js', true);?>
@@ -27,6 +28,9 @@
 
 <?php echo theme_js('prettify.js', true);?>
 <?php echo theme_js('lightbox.js', true);?>
+<?php echo theme_js('markdown.converter.js', true);?>
+<?php echo theme_js('markdown.sanitizer.js', true);?>
+<?php echo theme_js('markdown.editor.js', true);?>
 <?php echo theme_js('main.js', true);?>
   
   <link href="http://fonts.googleapis.com/css?family=Abel:400|Oswald:300,400,700" media="all" rel="stylesheet" type="text/css" />
@@ -92,6 +96,8 @@
 							</li>
 						<?php else: ?>
 							<li><a href="<?php echo site_url('secure/login');?>"><?php echo lang('login');?></a></li>
+							
+							<li><a href="<?php echo site_url('secure/register');?>"><?php echo lang('register');?></a></li>
 						<?php endif; ?>
 							<li>
 								<a href="<?php echo site_url('cart/view_cart');?>">
@@ -121,6 +127,7 @@
               </div>
             </header>
 		
+		<div class="container">
 		<?php if ($this->session->flashdata('message')):?>
 			<div class="alert alert-info">
 				<a class="close" data-dismiss="alert">×</a>
@@ -141,6 +148,7 @@
 				<?php echo $error;?>
 			</div>
 		<?php endif;?>
+		</div>
 		
 		
 

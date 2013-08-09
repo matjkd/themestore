@@ -18,7 +18,7 @@
 				
 						<div class="row">
 							<div class="span6">
-								<label><?php echo lang('shipping_instructions');?></label>
+								<label>Comments</label>
 								<?php echo form_textarea(array('name'=>'shipping_notes', 'class'=>'span6', 'rows'=>'4', 'value'=>$shipping_notes))?>
 							</div>
 						</div>

@@ -338,6 +338,22 @@ Class Customer_model extends CI_Model
 		}
 	}
 	
+	function set_affilate_id($email, $affiliateID)
+	{
+		$this->load->library('encrypt');
+		$customer = $this->get_customer_by_email($email);
+		if ($customer)
+		{
+			$customer['affiliate_id'] =  $affiliateID;
+			$this->save($customer);
+		return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
 	function get_customer_by_email($email)
 	{
 		$result	= $this->db->get_where('customers', array('email'=>$email));
