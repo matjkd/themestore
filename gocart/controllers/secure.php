@@ -406,6 +406,9 @@ class Secure extends CI_Controller {
 	{
 		//make sure they're logged in
 		$this->Customer_model->is_logged_in('secure/my_account/');
+		
+		
+		
 	
 		$data['gift_cards_enabled']	= $this->gift_cards_enabled;
 		
@@ -416,6 +419,17 @@ class Secure extends CI_Controller {
 		$data['page_title']			= 'Welcome '.$data['customer']['firstname'].' '.$data['customer']['lastname'];
 		$data['customer_addresses']	= $this->Customer_model->get_address_list($data['customer']['id']);
 		
+		
+		//set affiliate
+		if($this->input->cookie('affiliateCookie', TRUE)) {
+			$referrer = $this->input->cookie('affiliateCookie', TRUE);
+			
+			if($referrer != $data['customer']['id']) {
+				//set referrer
+				$this->load->model('customer_model');
+				$this->customer_model->set_referrer($data['customer']['email'], $referrer);	
+			}
+		}
 		//generate an affiliate ID for the user
 		if($data['customer']['affiliate_id'] == 0) {
 			

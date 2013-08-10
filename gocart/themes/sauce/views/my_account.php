@@ -158,7 +158,18 @@ $confirm	= array('id'=>'confirm', 'class'=>'span2', 'name'=>'confirm', 'value'=>
 	</div>
 	
 	<div class="span7 pull-right">
+		<div class="my-account-box">
+			<?php if($customer['affiliate_id'] != 0) { ?>
+			<h3>Affiliate Link</h3>
 		
+			
+			
+			<pre>http://www.bootstrapsauce.com/affiliate/a/<?=$customer['affiliate_id']?></pre>
+			
+			Use this link and receive 10% commision on all purchases made by whoever clicks it. It won't expire unless they click on 
+			an affiliate link of another user.
+			<?php } ?>
+		</div>
 	</div>
 
 <div class="row-fluid">
