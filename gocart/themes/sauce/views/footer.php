@@ -50,7 +50,26 @@
               </div>
             </footer>
 
-
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520a09af0edd8ac8"></script>
+<script type="text/javascript">
+  addthis.layers({
+    'theme' : 'transparent',
+    'share' : {
+      'position' : 'left',
+      'numPreferredServices' : 4
+    }, 
+    'follow' : {
+      'services' : []
+    },  
+    'whatsnext' : {},  
+    'recommended' : {
+      'title': 'Recommended for you:'
+    } 
+  });
+</script>
+<!-- AddThis Smart Layers END -->
 
            
             <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

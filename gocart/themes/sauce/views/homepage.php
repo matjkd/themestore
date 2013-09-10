@@ -24,8 +24,9 @@
                 </div>
                 <div class='active item'>
                   <div class='container'>
-                    <h1 class='slider-header'>We need Designers. Sell your templates here.</h1>
-                    <h2 class='slider-sub-header'>Earn a minimum of 55% on all templates sold regardless of exclusivity.</h2>
+                    <h1 class='slider-header'>Designers Wanted! Sell your bootstrap templates here.</h1>
+                    <h2 class='slider-sub-header'>Bootstrap Sauce is a brand new template marketplace. 
+                    	As a reward we are offering 70% commission for life to all designers that help by submitting acceptable themes during beta testing.</h2>
                     <div class='cta'>
                     	
                       <a href="template_admin/add_template" class="btn btn-cta btn-warning">Submit your template</a>
@@ -76,9 +77,9 @@
                   </div>
                   <div class='span4'>
                     <div class='info-bullet'>
-                      <i class='icon-gbp'></i>
-                      <h5>Awesome Affiliate Scheme</h5>
-                      <p>Earn 10% on all purchases made from your affiliate links, not just the first purchase.</p>
+                     <i class='icon-gbp'></i>
+                     <a href="/affiliates"> <h5>Awesome Affiliate Scheme</h5>
+                      <p>Earn 10% on all purchases made from your affiliate links, not just the first purchase.</p></a>
                     </div>
                   </div>
                 </div>

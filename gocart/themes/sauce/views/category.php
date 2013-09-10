@@ -43,7 +43,7 @@
 			
 			<?php if(count($products) > 0):?>
 				
-				<div class="pull-right" style="margin-top:20px;">
+				<div class="pull-left" style="margin-top:20px;">
 					<select id="sort_products" onchange="window.location='<?php echo site_url(uri_string());?>/?'+$(this).val();">
 						<option value=''><?php echo lang('default');?></option>
 						<option<?php echo(!empty($_GET['by']) && $_GET['by']=='name/asc')?' selected="selected"':'';?> value="by=name/asc"><?php echo lang('sort_by_name_asc');?></option>
@@ -89,11 +89,13 @@
 								<span class="price_sale"><?php echo lang('product_sale');?> <?php echo format_currency($product->saleprice); ?></span>
 							<?php else: ?>
 								<span class="price_reg"><?php echo lang('product_price');?> <?php echo format_currency($product->price); ?></span>
+								
 							<?php endif; ?>
 						</div>
 		                    <?php if((bool)$product->track_stock && $product->quantity < 1) { ?>
 								<div class="stock_msg"><?php echo lang('out_of_stock');?></div>
 							<?php } ?>
+							<span class="price_reg">Sales: <?php echo $product->sales; ?></span>
 						</div>
 				
 					</li>

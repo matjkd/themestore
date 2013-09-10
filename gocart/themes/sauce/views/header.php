@@ -58,7 +58,7 @@
                       <span class='icon-bar'></span>
                       <span class='icon-bar'></span>
                     </a>
-                    <a href="<?=base_url()?>" class="brand">Bootstrap Sauce</a>
+                    <a href="<?=base_url()?>" class="brand"><img src="<?=base_url()?>assets/images/bootstrap-logo.png" width="300px"/></a>
                     <div class='nav-collapse subnav-collapse collapse pull-right' id='top-navigation'>
                       <ul class='nav'>
                        
