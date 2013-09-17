@@ -1,24 +1,8 @@
-<?php
-	include ('header.php');
-?>
-
-<header class="jumbotron subhead" id="overview">
-	<div class="container">
-		<div class="docs-header-icon">
-			<h1>My Templates</h1>
-			<p class="lead">
-				Status of your template submissions
-			</p>
-		</div>
-	</div>
-</header>
-<?php
-	include ('admin_menu.php');
-?>
-<section class='section-wrapper post-w'>
-	<div class="container">
+<?php include('header.php'); ?>
 
 
+
+<h2>Submissions</h2>
 <table class="table table-bordered table-striped">
 			<thead>
 				<tr>
@@ -32,7 +16,7 @@
 			</thead>
 
 			<tbody>
-		<?php foreach($templates as $row):?>
+		<?php foreach($themes as $row):?>
 			<?php
 				//template status
 				$status = "Pending Review";
@@ -45,13 +29,13 @@
 				{
 					$status = "Passed Stage 1";
 					$buttonClass = "btn btn-primary";
-					$editable = 0;
+					//$editable = 0;
 				}
 				if ($row -> visual_passed == 2)
 				{
 					$status = "Failed Stage 1";
 					$buttonClass = "btn btn-danger";
-					$editable = 0;
+					//$editable = 0;
 				}
 
 				//stage 2
@@ -59,13 +43,13 @@
 				{
 					$status = "Passed Stage 2";
 					$buttonClass = "btn btn-primary";
-					$editable = 0;
+					//$editable = 0;
 				}
 				if ($row -> standards_passed == 2)
 				{
 					$status = "Failed Stage 2";
 					$buttonClass = "btn btn-danger";
-					$editable = 0;
+					//$editable = 0;
 				}
 
 				//stage 3
@@ -73,13 +57,13 @@
 				{
 					$status = "Passed Stage 3";
 					$buttonClass = "btn btn-primary";
-					$editable = 0;
+					//$editable = 0;
 				}
 				if ($row -> quality_passed == 2)
 				{
 					$status = "Failed Stage 3";
 					$buttonClass = "btn btn-danger";
-					$editable = 0;
+					//$editable = 0;
 				}
 
 				//stage 4
@@ -87,13 +71,13 @@
 				{
 					$status = "Accepted";
 					$buttonClass = "btn btn-success";
-					$editable = 0;
+					//$editable = 0;
 				}
 				if ($row -> copycheck_passed == 2)
 				{
 					$status = "Failed Stage 4";
 					$buttonClass = "btn btn-danger";
-					$editable = 0;
+					//$editable = 0;
 				}
 			?>
 			
@@ -124,7 +108,7 @@
 			</td>
 			<td><button class="<?=$buttonClass ?>"><?=$status ?></button>
 				<?php if($editable == 1) { ?>
-				<a href="<?=base_url()?>template_admin/edit_template/<?=$row->submission_id?>"><button class="<?=$buttonClass ?>">Edit</button>	</a>
+				<a href="<?=base_url()?>admin/themes/edit_template/<?=$row->submission_id?>"><button class="<?=$buttonClass ?>">Edit</button>	</a>
 				<?php } ?>
 				
 			</td>
@@ -134,9 +118,8 @@
 		<?php endforeach; ?>
 		</tbody>
 		</table>
-	</div>
-</section>
 
-<?php
-	include ('footer.php');
-?>
+
+
+
+<?php include('footer.php');

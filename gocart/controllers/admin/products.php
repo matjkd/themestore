@@ -167,6 +167,9 @@ class Products extends Admin_Controller {
 		$data['product_categories']	= array();
 		$data['images']				= array();
 		$data['product_files']		= array();
+		
+		//hack
+		$data['product_owner']			= '';
 
 		//create the photos array for later use
 		$data['photos']		= array();
@@ -212,6 +215,8 @@ class Products extends Admin_Controller {
 			$data['taxable']			= $product->taxable;
 			$data['fixed_quantity']		= $product->fixed_quantity;
 			$data['enabled']			= $product->enabled;
+			//hack
+			$data['product_owner']			= $product->product_owner;
 			
 			//make sure we haven't submitted the form yet before we pull in the images/related products from the database
 			if(!$this->input->post('submit'))
@@ -252,6 +257,9 @@ class Products extends Admin_Controller {
 		$this->form_validation->set_rules('taxable', 'lang:taxable', 'trim|numeric');
 		$this->form_validation->set_rules('fixed_quantity', 'lang:fixed_quantity', 'trim|numeric');
 		$this->form_validation->set_rules('enabled', 'lang:enabled', 'trim|numeric');
+
+//hack
+$this->form_validation->set_rules('product_owner', 'Owner', 'trim');
 
 		/*
 		if we've posted already, get the photo stuff and organize it
@@ -302,6 +310,7 @@ class Products extends Admin_Controller {
 			{
 				$slug		= $this->Routes_model->validate_slug($slug, $product->route_id);
 				$route_id	= $product->route_id;
+				
 			}
 			else
 			{
@@ -309,6 +318,7 @@ class Products extends Admin_Controller {
 				
 				$route['slug']	= $slug;	
 				$route_id	= $this->Routes_model->save($route);
+				$save['date_added'] = time();
 			}
 
 			$save['id']					= $id;
@@ -321,16 +331,21 @@ class Products extends Admin_Controller {
 			$save['price']				= $this->input->post('price');
 			$save['saleprice']			= $this->input->post('saleprice');
 			$save['weight']				= $this->input->post('weight');
-			$save['track_stock']		= $this->input->post('track_stock');
-			$save['fixed_quantity']		= $this->input->post('fixed_quantity');
+			//$save['track_stock']		= $this->input->post('track_stock');
+			//$save['fixed_quantity']		= $this->input->post('fixed_quantity');
+			$save['track_stock']		= 0;
+			$save['fixed_quantity']		= 1;
 			$save['quantity']			= $this->input->post('quantity');
-			$save['shippable']			= $this->input->post('shippable');
+			//$save['shippable']			= $this->input->post('shippable');
+			$save['shippable']			= 0;
 			$save['taxable']			= $this->input->post('taxable');
 			$save['enabled']			= $this->input->post('enabled');
 			$post_images				= $this->input->post('images');
 			
 			$save['slug']				= $slug;
 			$save['route_id']			= $route_id;
+			//owner hack
+			$save['product_owner']				= $this->input->post('product_owner');
 			
 			if($primary	= $this->input->post('primary_image'))
 			{
@@ -379,6 +394,9 @@ class Products extends Admin_Controller {
 			}	
 			
 			// save product 
+			
+			//add date of new product
+			
 			$product_id	= $this->Product_model->save($save, $options, $categories);
 			
 			// add file associations

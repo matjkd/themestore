@@ -30,34 +30,34 @@ include ('header.php');
 								<div class="span6">
 									<div class="control-group">
 										<label>Name</label>
-										<input class="span12" name="name" placeholder="Name of Template..." type="text" value="<?=set_value('name', '') ?>">
+										<input class="span12" name="name" placeholder="Name of Template..." type="text" value="<?=set_value('name', $name) ?>">
 									</div>
 									<div class="control-group">
 										<label>Price (single)</label>
 										<div class="input-prepend">
 											<span class="add-on">£</span>
-											<input class="span12" name="price_single" placeholder="Suggested Price..." type="text" value="<?=set_value('price_single', '') ?>">
+											<input class="span12" name="price_single" placeholder="Suggested Price..." type="text" value="<?=set_value('price_single', $price_single) ?>">
 										</div>
 									</div>
 									<div class="control-group">
 										<label>Price (multiple)</label>
 										<div class="input-prepend">
 											<span class="add-on">£</span>
-											<input class="span12" name="price_multiple" placeholder="Price for mulitple licence" type="text" value="<?=set_value('price_multiple', '') ?>">
+											<input class="span12" name="price_multiple" placeholder="Price for mulitple licence" type="text" value="<?=set_value('price_multiple', $price_multiple) ?>">
 										</div>
 									</div>
 									<div class="control-group">
 										<label>Price (extended)</label>
 										<div class="input-prepend">
 											<span class="add-on">£</span>
-											<input class="span12" name="price_extended" placeholder="Price for extended licence..." type="text" value="<?=set_value('price_extended', '') ?>">
+											<input class="span12" name="price_extended" placeholder="Price for extended licence..." type="text" value="<?=set_value('price_extended', $price_extended) ?>">
 										</div>
 									</div>
 
 									<div class="control-group">
 										<label>Demo URL</label>
 
-										<input class="span12" name="demo_url" placeholder="URL of live demo of template..." type="text" value="<?=set_value('demo_url', '') ?>">
+										<input class="span12" name="demo_url" placeholder="URL of live demo of template..." type="text" value="<?=set_value('demo_url', $demo_url) ?>">
 
 									</div>
 
@@ -65,12 +65,15 @@ include ('header.php');
 										<label>File</label>
 
 										<input type="file" name="userfile" class="span12" />
+										
+										<?=$file_location?>
 
 									</div>
 
 									<div class="control-group">
 										<label>File Version</label>
-										<input class="span12" name="version" placeholder="Template version" type="text" value="<?=set_value('version', '') ?>">
+										<input class="span12" name="version" placeholder="Template version" type="text" value="<?=set_value('version', $version) ?>">
+										
 									</div>
 								</div>
 
@@ -105,7 +108,7 @@ include ('header.php');
 										
 										<div class="wmd-panel">
             <div id="wmd-button-bar"></div>
-<textarea class="span11 wmd-input" id="wmd-input" name="description" placeholder="Description of Template..." ><?=set_value('description', '') ?></textarea>
+<textarea class="span11 wmd-input" id="wmd-input" name="description" placeholder="Description of Template..." ><?=set_value('description', $description) ?></textarea>
         </div>
         <div id="wmd-preview" class="wmd-panel wmd-preview"></div>
 										
@@ -141,14 +144,23 @@ include ('header.php');
 
 									<div class="control-group">
 										<label>Notes for Reviewer</label>
-										<textarea class="span11" name="notes" placeholder="Any useful information or comments" ><?=set_value('notes', '') ?></textarea>
+										<textarea class="span11" name="notes" placeholder="Any useful information or comments" ><?=set_value('notes', $notes) ?></textarea>
 									</div>
 
 								</div>
 
 							</div>
 							<div class="form-actions no-margin-bottom">
+								
+								<input type="hidden" name="action" value="<?=$action?>"/>
+								<?php if($action == 'submit') { ?>
 								<input type="submit" value="upload" />
+								<?php } ?>
+								
+								<?php if($action == 'update') { ?>
+								<input type="hidden" name="submission_id" value="<?=$submission_id?>"/>	
+								<input type="submit" value="update" />
+								<?php } ?>
 
 							</div>
 						</fieldset>

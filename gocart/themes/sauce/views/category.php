@@ -1,11 +1,17 @@
 <?php include('header.php'); ?>
+
+<header class="jumbotron subhead" id="overview">
+          <div class="container">
+            <div class="docs-header-icon">
+              <h1><?=$page_title;?></h1>
+              <p class="lead"> </p>
+            </div>
+          </div>
+        </header>
 <section class='section-wrapper post-w'>
 	<div class='container'>
 	
-	<div class="page-header">
-		<h1><?php echo $page_title; ?></h1>
-	</div>
-	
+		
 	<?php if(!empty($category->description)): ?>
 	<div class="row">
 		<div class="span12"><h4><?php echo $category->description; ?></h4></div>
@@ -22,28 +28,11 @@
 	
 
 	<div class="row">
-		<?php if(isset($subcategories) && count($subcategories) > 0): ?>
-		<div class="span3">
-			<ul class="nav nav-list well">
-				<li class="nav-header">
-				Subcategories
-				</li>
-				
-				<?php foreach($subcategories as $subcategory):?>
-					<li><a href="<?php echo site_url(implode('/', $base_url).'/'.$subcategory->slug); ?>"><?php echo $subcategory->name;?></a></li>
-				<?php endforeach;?>
-			</ul>
-		</div>
 		
-		<div class="span9">
-		
-		<?php else:?>
-			<div class="span12">
-		<?php endif;?>
 			
 			<?php if(count($products) > 0):?>
 				
-				<div class="pull-left" style="margin-top:20px;">
+				<div class="span12 pull-left" style="margin-top:20px;">
 					<select id="sort_products" onchange="window.location='<?php echo site_url(uri_string());?>/?'+$(this).val();">
 						<option value=''><?php echo lang('default');?></option>
 						<option<?php echo(!empty($_GET['by']) && $_GET['by']=='name/asc')?' selected="selected"':'';?> value="by=name/asc"><?php echo lang('sort_by_name_asc');?></option>
@@ -54,10 +43,9 @@
 				</div>
 				<div style="float:left;"><?php echo $this->pagination->create_links();?></div>
 				<br style="clear:both;"/>
-				<ul class="thumbnails category_container">
+			
 				<?php foreach($products as $product):?>
-					<li class="span4 product">
-						<?php
+					<?php
 						$photo	= theme_img('no_picture.png', lang('no_image_available'));
 						$product->images	= array_values($product->images);
 				
@@ -75,15 +63,18 @@
 							$photo	= '<img src="'.base_url('uploads/images/medium/'.$primary->filename).'" alt="'.$product->seo_title.'"/>';
 						}
 						?>
-						<a class="thumbnail" href="<?php echo site_url(implode('/', $base_url).'/'.$product->slug); ?>">
-							<?php echo $photo; ?>
-						</a>
-						<h5 style="margin-top:5px;"><a href="<?php echo site_url(implode('/', $base_url).'/'.$product->slug); ?>"><?php echo $product->name;?></a></h5>
-						<?php if($product->excerpt != ''): ?>
-						<div class="excerpt"><?php echo $product->excerpt; ?></div>
-						<?php endif; ?>
-						<div>
-						<div class="price_container">
+					<div class='span3'>
+                    <div class='white-card'>
+                      <div class="img-w hover-fader">
+                        <a href="<?php echo site_url(implode('/', $base_url).'/'.$product->slug); ?>"><?php echo $photo; ?>
+                          <span class="hover-fade">
+                            <i class="icon-zoom-in"></i>
+                          </span>
+                        </a>
+                      </div>
+                      <h5><a href="<?php echo site_url(implode('/', $base_url).'/'.$product->slug); ?>"><?php echo $product->name;?></a></h5>
+                      <p><?php echo $product->excerpt; ?></p>
+                      <div class="price_container">
 							<?php if($product->saleprice > 0):?>
 								<span class="price_slash"><?php echo lang('product_reg');?> <?php echo format_currency($product->price); ?></span>
 								<span class="price_sale"><?php echo lang('product_sale');?> <?php echo format_currency($product->saleprice); ?></span>
@@ -97,12 +88,12 @@
 							<?php } ?>
 							<span class="price_reg">Sales: <?php echo $product->sales; ?></span>
 						</div>
-				
-					</li>
+                    </div>
+                  
+					
 				<?php endforeach?>
-				</ul>
 			<?php endif;?>
-		</div>
+		
 	</div>
 
 <script type="text/javascript">

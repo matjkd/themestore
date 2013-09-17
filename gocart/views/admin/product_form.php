@@ -550,6 +550,13 @@ function remove_option(id)
 		<?php
 		$data	= array('name'=>'saleprice', 'value'=>set_value('saleprice', $saleprice), 'class'=>'span4');
 		echo form_input($data);?>
+		
+		
+		<label for="owner">Owner</label>
+		<?php
+		$data	= array('name'=>'product_owner', 'value'=>set_value('product_owner', $product_owner), 'class'=>'span4');
+		echo form_input($data);?>
+		
 	</div>
 </div>
 

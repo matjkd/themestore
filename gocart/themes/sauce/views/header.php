@@ -34,6 +34,7 @@
 <?php echo theme_js('main.js', true);?>
   
   <link href="http://fonts.googleapis.com/css?family=Abel:400|Oswald:300,400,700" media="all" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Source Sans Pro&subset=latin" rel="stylesheet" type="text/css">
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -49,7 +50,9 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
             <![endif]-->
-            <header id='header'>
+        
+            
+            <div id='header'>
               <div class='navbar navbar-fixed-top'>
                 <div class='navbar-inner'>
                   <div class='container'>
@@ -125,30 +128,9 @@
                   </div>
                 </div>
               </div>
-            </header>
+            </div>
 		
-		<div class="container">
-		<?php if ($this->session->flashdata('message')):?>
-			<div class="alert alert-info">
-				<a class="close" data-dismiss="alert">×</a>
-				<?php echo $this->session->flashdata('message');?>
-			</div>
-		<?php endif;?>
 		
-		<?php if ($this->session->flashdata('error')):?>
-			<div class="alert alert-error">
-				<a class="close" data-dismiss="alert">×</a>
-				<?php echo $this->session->flashdata('error');?>
-			</div>
-		<?php endif;?>
-		
-		<?php if (!empty($error)):?>
-			<div class="alert alert-error">
-				<a class="close" data-dismiss="alert">×</a>
-				<?php echo $error;?>
-			</div>
-		<?php endif;?>
-		</div>
 		
 		
 

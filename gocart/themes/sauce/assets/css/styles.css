@@ -1,5 +1,5 @@
 body {
-	font-family: "Abel", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .brand { font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
@@ -8,7 +8,16 @@ body {
 		margin-top:0px;
 	}
 }
-
+p, .white-card p {
+	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1, h2, h3, h4, h5 {
+	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.jumbotron h1 {
+	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+padding-top:20px;
+}
 
 img.responsiveImage
 {
@@ -46,7 +55,17 @@ img.responsiveImage
 	margin-bottom: 0;
 	color: #555;
 }
+.pre-footer .footer-header {
 
+text-transform: none;
+}
+.pre-footer .footer-header {
+
+text-transform: none;
+}
+.pre-footer .footer-logo a {
+text-transform: none;
+}
 /* Hide Related products from the responsive design */
  @media (max-width: 767px) {
 	.desktop {
@@ -111,3 +130,7 @@ img.responsiveImage
 .hide {
 	display:none;
 }
+
+.white-card .img-w.hover-fader i {
+
+top: 40%;

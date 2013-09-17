@@ -24,9 +24,9 @@
                 </div>
                 <div class='active item'>
                   <div class='container'>
-                    <h1 class='slider-header'>Designers Wanted! Sell your bootstrap templates here.</h1>
-                    <h2 class='slider-sub-header'>Bootstrap Sauce is a brand new template marketplace. 
-                    	As a reward we are offering 70% commission for life to all designers that help by submitting acceptable themes during beta testing.</h2>
+                    <h1 class='slider-header'>Buy and Sell Twitter Bootstrap templates here. </h1>
+                    <h2 class='slider-sub-header'>Bootstrap Sauce is a brand new template marketplace. Earn a minimum of 55% commission on all templates
+                    	</h2>
                     <div class='cta'>
                     	
                       <a href="template_admin/add_template" class="btn btn-cta btn-warning">Submit your template</a>
@@ -84,6 +84,71 @@
                   </div>
                 </div>
               </div>
-            </div>
+              </div>
+              
+               
+               
+                <section class='section-wrapper under-slider'>
+              <div class='container'>
+                <div class='row'>
+                  <div class='span12'>
+                    <h3 class='section-header'>Latest Themes</h3>
+                  </div>
+                  <div class='span3'>
+                    <div class='white-card'>
+                      <div class="img-w hover-fader">
+                        <a href="assets/images/test-square.png" data-rel="lightbox[gallery]"><img alt="Photo-card" src="assets/images/test-square.png">
+                          <span class="hover-fade">
+                            <i class="icon-zoom-in"></i>
+                          </span>
+                        </a>
+                      </div>
+                      <h5>Coming Soon.</h5>
+                      <p>Submit your themes.</p>
+                    </div>
+                  </div>
+                  <div class='span3'>
+                    <div class='white-card'>
+                      <div class="img-w hover-fader">
+                        <a href="assets/images/test-square.png" data-rel="lightbox[gallery]"><img alt="Photo-card" src="assets/images/test-square.png">
+                          <span class="hover-fade">
+                            <i class="icon-zoom-in"></i>
+                          </span>
+                        </a>
+                      </div>
+                      <h5>Coming Soon.</h5>
+                      <p>Submit your themes.</p>
+                    </div>
+                  </div>
+                  <div class='span3'>
+                    <div class='white-card'>
+                      <div class="img-w hover-fader">
+                        <a href="assets/images/test-square.png" data-rel="lightbox[gallery]"><img alt="Photo-card" src="assets/images/test-square.png">
+                          <span class="hover-fade">
+                            <i class="icon-zoom-in"></i>
+                          </span>
+                        </a>
+                      </div>
+                     <h5>Coming Soon.</h5>
+                      <p>Submit your themes.</p>
+                    </div>
+                  </div>
+                  <div class='span3'>
+                    <div class='white-card'>
+                      <div class="img-w hover-fader">
+                        <a href="assets/images/test-square.png" data-rel="lightbox[gallery]"><img alt="Photo-card" src="assets/images/test-square.png">
+                          <span class="hover-fade">
+                            <i class="icon-zoom-in"></i>
+                          </span>
+                        </a>
+                      </div>
+                     <h5>Coming Soon.</h5>
+                      <p>Submit your themes.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
 
 <?php include('footer.php'); ?>

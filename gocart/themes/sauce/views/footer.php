@@ -4,7 +4,7 @@
                   <div class='row'>
                     <div class='span4'>
                       <div class='footer-logo'>
-                        <a>Bootstrap<strong>Sauce</strong></a>
+                        <a>bootstrap<strong>sauce</strong></a>
                       </div>
                       <p>A brand new marketplace for Twitter Bootstrap templates.</p>
                       
@@ -62,11 +62,7 @@
     }, 
     'follow' : {
       'services' : []
-    },  
-    'whatsnext' : {},  
-    'recommended' : {
-      'title': 'Recommended for you:'
-    } 
+    }
   });
 </script>
 <!-- AddThis Smart Layers END -->
