@@ -23,7 +23,7 @@ class Cart extends CI_Controller {
 		remove_ssl();
 		
 		$this->load->library('Go_cart');
-		$this->load->model(array('Page_model', 'Product_model', 'Digital_Product_model', 'Gift_card_model', 'Option_model', 'Order_model', 'Settings_model'));
+		$this->load->model(array('Page_model', 'Product_model', 'Digital_Product_model', 'Gift_card_model', 'Option_model', 'Order_model', 'Settings_model', 'Themes_model'));
 		$this->load->helper(array('form_helper', 'formatting_helper'));
 		
 		//fill in our variables
@@ -50,7 +50,9 @@ class Cart extends CI_Controller {
 	{
 		$this->load->model(array('Banner_model', 'box_model'));
 		$this->load->helper('directory');
-
+		
+		$data['random_themes'] = $this->Themes_model->get_random_themes(6);
+		$data['latest_themes'] = $this->Themes_model->get_latest_themes(8);
 		$data['gift_cards_enabled'] = $this->gift_cards_enabled;
 		$data['banners']			= $this->Banner_model->get_homepage_banners(5);
 		$data['boxes']				= $this->box_model->get_homepage_boxes(4);

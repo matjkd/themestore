@@ -43,6 +43,19 @@ img.responsiveImage
 .product_price {
 	color:#ffa800;
 }
+.slider-browser {
+
+border: solid 2px;
+}
+.carousel-control {
+
+left: 45px;
+
+}
+.carousel-control.right {
+
+right: 45px;
+}
 
 /* Footer
 -------------------------------------------------- */

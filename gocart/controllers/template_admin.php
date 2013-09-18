@@ -144,8 +144,8 @@
 
 			$this -> form_validation -> set_rules('name', 'Template Name', 'trim|required');
 			$this -> form_validation -> set_rules('price_single', 'Price Single', 'trim|required');
-			$this -> form_validation -> set_rules('price_multiple', 'Price multiple', 'trim|required');
-			$this -> form_validation -> set_rules('price_extended', 'Price extended', 'trim|required');
+			$this -> form_validation -> set_rules('price_multiple', 'Price multiple', 'trim');
+			$this -> form_validation -> set_rules('price_extended', 'Price extended', 'trim');
 			$this -> form_validation -> set_rules('demo_url', 'Demo URL', 'trim|required');
 
 			$this -> form_validation -> set_rules('version', 'Version', 'trim|required');

@@ -25,7 +25,7 @@
       });
     });
     $('.carousel').carousel({
-      interval: false
+      interval: 10000
     });
     return $('a[data-toggle="testimonial"]').on("click", function(e) {
       $(this).closest('.testimonials-users').find('a[data-toggle="testimonial"]').removeClass("active");

@@ -170,6 +170,7 @@ class Products extends Admin_Controller {
 		
 		//hack
 		$data['product_owner']			= '';
+		$data['demo_url']			= '';
 
 		//create the photos array for later use
 		$data['photos']		= array();
@@ -217,6 +218,7 @@ class Products extends Admin_Controller {
 			$data['enabled']			= $product->enabled;
 			//hack
 			$data['product_owner']			= $product->product_owner;
+			$data['demo_url']			= $product->demo_url;
 			
 			//make sure we haven't submitted the form yet before we pull in the images/related products from the database
 			if(!$this->input->post('submit'))
@@ -260,7 +262,7 @@ class Products extends Admin_Controller {
 
 //hack
 $this->form_validation->set_rules('product_owner', 'Owner', 'trim');
-
+$this->form_validation->set_rules('demo_url', 'demo url', 'trim');
 		/*
 		if we've posted already, get the photo stuff and organize it
 		if validation comes back negative, we feed this info back into the system
@@ -346,6 +348,7 @@ $this->form_validation->set_rules('product_owner', 'Owner', 'trim');
 			$save['route_id']			= $route_id;
 			//owner hack
 			$save['product_owner']				= $this->input->post('product_owner');
+			$save['demo_url']				= $this->input->post('demo_url');
 			
 			if($primary	= $this->input->post('primary_image'))
 			{

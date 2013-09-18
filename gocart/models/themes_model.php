@@ -102,7 +102,7 @@
 		}
 		function get_latest_themes($count = 4)
 		{
-			$this -> db -> order_by('id', 'ASC');
+			$this -> db -> order_by('id', 'DESC');
 			$this -> db -> limit($count);
 			$result = $this -> db -> get('products');
 			$return = $result -> result();
