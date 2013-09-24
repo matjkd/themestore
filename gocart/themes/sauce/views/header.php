@@ -32,7 +32,8 @@
 <?php echo theme_js('markdown.sanitizer.js', true);?>
 <?php echo theme_js('markdown.editor.js', true);?>
 <?php echo theme_js('main.js', true);?>
-  
+<?php echo theme_js('custom.js', true);?> 
+
   <link href="http://fonts.googleapis.com/css?family=Abel:400|Oswald:300,400,700" media="all" rel="stylesheet" type="text/css" />
   <link href="http://fonts.googleapis.com/css?family=Source Sans Pro&subset=latin" rel="stylesheet" type="text/css">
   <script>
@@ -53,15 +54,15 @@
         
             
             <div id='header'>
-              <div class='navbar navbar-fixed-top'>
-                <div class='navbar-inner'>
+              <div  class='navbar navbar-fixed-top'>
+                <div id="stickynav" class='navbar-inner'>
                   <div class='container'>
                     <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
                       <span class='icon-bar'></span>
                       <span class='icon-bar'></span>
                       <span class='icon-bar'></span>
                     </a>
-                    <a href="<?=base_url()?>" class="brand"><img src="<?=base_url()?>assets/images/bootstrap-logo.png" width="300px"/></a>
+                    <a href="<?=base_url()?>" class="brand"><img class="logo" src="<?=base_url()?>assets/images/bootstrap-logo.png"/></a>
                     <div class='nav-collapse subnav-collapse collapse pull-right' id='top-navigation'>
                       <ul class='nav'>
                        

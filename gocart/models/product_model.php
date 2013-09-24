@@ -347,6 +347,7 @@ Class Product_model extends CI_Model
 		
 		if($by && $sort)
 		{
+				
 			$this->db->order_by($by, $sort);
 		}
 		

@@ -58,7 +58,7 @@
     'theme' : 'transparent',
     'share' : {
       'position' : 'left',
-      'numPreferredServices' :3
+      'numPreferredServices' :4
     }, 
     'follow' : {
       'services' : []

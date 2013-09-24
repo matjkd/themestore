@@ -193,6 +193,8 @@ class Cart extends CI_Controller {
 							'name/desc' => array('by' => 'name', 'sort'=>'DESC'),
 							'price/asc' => array('by' => 'price', 'sort'=>'ASC'),
 							'price/desc' => array('by' => 'price', 'sort'=>'DESC'),
+							'date_added/asc' => array('by' => 'date_added', 'sort'=>'ASC'),
+							'date_added/desc' => array('by' => 'date_added', 'sort'=>'DESC'),
 							);
 		$sort_by	= array('by'=>false, 'sort'=>false);
 	
@@ -301,7 +303,10 @@ class Cart extends CI_Controller {
 							'name/desc' => array('by' => 'products.name', 'sort'=>'DESC'),
 							'price/asc' => array('by' => 'products.price', 'sort'=>'ASC'),
 							'price/desc' => array('by' => 'products.price', 'sort'=>'DESC'),
+							'date_added/asc' => array('by' => 'products.date_added', 'sort'=>'ASC'),
+							'date_added/desc' => array('by' => 'products.date_added', 'sort'=>'DESC'),
 							);
+							
 		$sort_by	= array('by'=>'sequence', 'sort'=>'ASC');
 	
 		if(isset($_GET['by']))

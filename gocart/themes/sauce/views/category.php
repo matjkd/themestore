@@ -39,6 +39,10 @@
 						<option<?php echo(!empty($_GET['by']) && $_GET['by']=='name/desc')?' selected="selected"':'';?>  value="by=name/desc"><?php echo lang('sort_by_name_desc');?></option>
 						<option<?php echo(!empty($_GET['by']) && $_GET['by']=='price/asc')?' selected="selected"':'';?>  value="by=price/asc"><?php echo lang('sort_by_price_asc');?></option>
 						<option<?php echo(!empty($_GET['by']) && $_GET['by']=='price/desc')?' selected="selected"':'';?>  value="by=price/desc"><?php echo lang('sort_by_price_desc');?></option>
+					
+						<option<?php echo(!empty($_GET['by']) && $_GET['by']=='date_added/asc')?' selected="selected"':'';?>  value="by=date_added/asc">Date Added (oldest first)</option>
+						<option<?php echo(!empty($_GET['by']) && $_GET['by']=='date_added/desc')?' selected="selected"':'';?>  value="by=date_added/desc">Date Added (newest first)</option>
+					
 					</select>
 				</div>
 				<div style="float:left;"><?php echo $this->pagination->create_links();?></div>
