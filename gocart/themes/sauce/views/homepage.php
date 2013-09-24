@@ -137,13 +137,23 @@ include ('header.php');
                         </a>
                       </div>
                       <h5><?=$latest -> name ?></h5>
-                      <p>Price: &pound;<?=$latest -> price ?></p>
+                      <p>
+                      <?php if($latest->saleprice > 0):?>
+								<span class="price_slash"><?php echo lang('product_reg');?> <?php echo format_currency($latest->price); ?></span>
+								<span class="price_sale"><?php echo lang('product_sale');?> <?php echo format_currency($latest->saleprice); ?></span>
+							<?php else: ?>
+								<span class="price_reg"><?php echo lang('product_price');?> <?php echo format_currency($latest->price); ?></span>
+								
+							<?php endif; ?>
+							</p>
                     </div>
                   </div>
         <?php	endforeach; ?>          
                   
                  
                 </div>
+                
+                	<?=$this->load->view('mailinglist')?>
               </div>
             </section>
             

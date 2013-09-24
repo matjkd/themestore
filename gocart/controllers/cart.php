@@ -60,6 +60,17 @@ class Cart extends CI_Controller {
 		
 		$this->load->view('homepage', $data);
 	}
+	
+	function preview($theme_id)
+	{
+		$data['product']	= $this->Product_model->get_product($theme_id);
+		
+		//remove http:// and add it again
+		$url = str_replace('http://', '', $data['product']->demo_url);
+		$data['url'] = "http://".$url; 
+		
+		$this->load->view('preview', $data);
+	}
 
 	function page($id = false)
 	{
@@ -82,6 +93,60 @@ class Cart extends CI_Controller {
 		$data['gift_cards_enabled'] = $this->gift_cards_enabled;
 		
 		$this->load->view('page', $data);
+	}
+	
+	function about_us()
+	{
+		$data['page_title']			= "About Bootstrap Sauce";
+		$this->load->view('about', $data);
+	}
+	
+	function contact()
+	{
+		$data['page_title']			= "Support";
+		$this->load->view('contact', $data);
+	}
+	
+	function send_contact()
+	{
+		
+			$this->load->library('email');
+			$this->load->library('form_validation');
+				$this->form_validation->set_rules('name', 'Name', 'trim|required');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('message', 'Message', 'trim|required');
+	
+		
+		if ($this->form_validation->run() == FALSE)
+		{
+			$data['error']				= validation_errors();
+			$this->session->set_flashdata('error', $data['error']);
+			redirect('contact');
+		}
+		else
+		{
+			
+			$config['mailtype'] = 'html';
+			$content = $this->input->post('message');
+			$name = $this->input->post('name');
+			$email = $this->input->post('email');
+			$this->email->initialize($config);
+	
+			$this->email->from($this->config->item('email'), $this->config->item('company_name'));
+			$this->email->to('mat@redstudio.co.uk');
+			$this->email->bcc($this->config->item('email'));
+			$this->email->subject('Bootstrap Contact Form');
+			$this->email->message("Message:".html_entity_decode($content)."<br/>
+			Name:".$name."
+			<br/>Email:".$email
+			
+			);
+			
+			$this->email->send();
+			$this->session->set_flashdata('error', "Email has been sent.");
+			redirect('contact');
+			}
+			
 	}
 	
 	function add_template($id = false)
@@ -327,6 +392,8 @@ class Cart extends CI_Controller {
 		{
 			$data['product']->images	= array_values((array)json_decode($data['product']->images));
 		}
+		
+		$data['product_author'] = $this->Themes_model->get_author($data['product']->product_owner);
 
 		$data['gift_cards_enabled'] = $this->gift_cards_enabled;
 					

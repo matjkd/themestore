@@ -28,7 +28,7 @@
                 <div class='container'>
                   <div class='row'>
                     <div class='span6'>
-                      <div class='copyright'>Copyright &copy; 2013 Bootstrap Sauce. All rights reserved.</div>
+                      <div class='copyright'>Copyright &copy; 2013 Bootstrap Sauce. All rights reserved. Driven by <a href="http://gocartdv.com/" target="_blank">GoCart</a></div>
                     </div>
                     <div class='span6'>
                       <ul class='footer-links'>
@@ -49,7 +49,7 @@
                 </div>
               </div>
             </footer>
-
+<a href="https://plus.google.com/100100568020435972998" rel="publisher">&nbsp;</a>
 <!-- AddThis Smart Layers BEGIN -->
 <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520a09af0edd8ac8"></script>
@@ -58,7 +58,7 @@
     'theme' : 'transparent',
     'share' : {
       'position' : 'left',
-      'numPreferredServices' : 4
+      'numPreferredServices' :3
     }, 
     'follow' : {
       'services' : []

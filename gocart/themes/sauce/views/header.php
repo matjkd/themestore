@@ -81,7 +81,9 @@
                          <li>
                         	<a href="<?=base_url()?>sauce-cms">Sauce CMS</a>
                         </li>
-                        	
+                         <li>
+                        	<a href="<?=base_url()?>contact">Contact</a>
+                        </li>	
                         
                       </ul>
                      

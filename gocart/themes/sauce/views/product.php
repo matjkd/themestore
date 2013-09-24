@@ -5,6 +5,23 @@
 		$('.product').equalHeights();
 	}
 </script>
+<span itemscope itemtype="http://schema.org/Product"><header class="jumbotron subhead" id="overview">
+          <div class="container">
+            <div class="docs-header-icon">
+              <h1 itemprop="name"><?php echo $product->name;?></h1>
+              <p itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="lead">
+<?php if($product->saleprice > 0):?>
+								<small><?php echo lang('on_sale');?></small>
+								<span itemprop="price" class="product_price"><?php echo format_currency($product->saleprice); ?></span>
+							<?php else: ?>
+								<small><?php echo lang('product_price');?></small>
+								<span itemprop="price" class="product_price"><?php echo format_currency($product->price); ?></span>
+							<?php endif;?>              	
+</p>
+            </div>
+          </div>
+        </header>
+        
 <section class='section-wrapper post-w'>
 	<div class='container'>
 <div class="row">
@@ -27,10 +44,10 @@
 						}
 					}
 
-					$photo	= '<img class="responsiveImage" src="'.base_url('uploads/images/medium/'.$primary->filename).'" alt="'.$product->seo_title.'"/>';
-				}
-				echo $photo
-				?>
+					$photo	= '<img itemprop="image" class="responsiveImage" src="'.base_url('uploads/images/medium/'.$primary->filename).'" alt="'.$product->seo_title.'"/>';
+				}?>
+				<a href="http://<?=$product->demo_url?>" target="_blank"><?=$photo?></a>
+				
 			</div>
 		</div>
 		<?php if(!empty($primary->caption)):?>
@@ -44,16 +61,75 @@
 		<div class="row">
 			<div class="span4 product-images">
 				<?php foreach($product->images as $image):?>
-				<img class="span1" onclick="$(this).squard('390', $('#primary-img'));" src="<?php echo base_url('uploads/images/medium/'.$image->filename);?>"/>
+				<a href="http://<?=$product->demo_url?>" target="_blank"><img class="span1" onclick="$(this).squard('390', $('#primary-img'));" src="<?php echo base_url('uploads/images/medium/'.$image->filename);?>"/></a>
 				<?php endforeach;?>
 				
 			</div>
 		</div>
 		<?php endif;?>
 		
+		
+		
 		<div class="row">
-			<div class="span4">
-				<h4><a href="http://<?=$product->demo_url?>" target="_blank">Preview Template</a></h4>
+			<div class="span4" >
+				<table class="table table-bordered" style="background:#fff; margin-top:10px;">
+				  <thead style="background:#555; color:#fff;">
+					  <tr>
+					  	<th colspan="2">Product Attributes</th>
+					  </tr>
+				  </thead>
+				  <tbody>
+				  	<tr>
+				  		<td>
+				  			<strong>Version</strong>
+				  		</td>
+				  		
+				  		<td>
+				  			1.0
+				  		</td>
+				  	</tr>
+				  	<tr>
+				  		<td>
+				  			<strong>Author</strong>
+				  		</td>
+				  		
+				  		<td>
+				  			<?=$product_author[0]->firstname?> <?=$product_author[0]->lastname?>
+				  		</td>
+				  	</tr>
+				  	<tr>
+				  		<td>
+				  			<strong>Bootstrap Version</strong>
+				  		</td>
+				  		
+				  		<td>
+				  			In testing
+				  		</td>
+				  	</tr>
+				  	<tr>
+				  		<td>
+				  			<strong>Browser Compatibility</strong>
+				  		</td>
+				  		
+				  		<td>
+				  			In testing
+				  		</td>
+				  	</tr>
+				  	<tr>
+				  		<td>
+				  			<strong>Preview</strong>
+				  		</td>
+				  		
+				  		<td>
+				  			<a href="http://<?=$product->demo_url?>" target="_blank">Demo</a>
+				  		</td>
+				  	</tr>
+				  	<tr>
+				  		<td><strong>Product ID</strong></td>
+				  		<td><?php echo $product->sku; ?></td>
+				  	</tr>
+				  </tbody>
+				</table>
 			</div>
 				
 		</div>
@@ -113,46 +189,16 @@
 	</div>
 	<div class="span8">
 		
-		<div class="row">
-			<div class="span8">
-				<div class="page-header">
-					<h2 style="font-weight:normal">
-						<?php echo $product->name;?>
-						<span class="pull-right">
-							<?php if($product->saleprice > 0):?>
-								<small><?php echo lang('on_sale');?></small>
-								<span class="product_price"><?php echo format_currency($product->saleprice); ?></span>
-							<?php else: ?>
-								<small><?php echo lang('product_price');?></small>
-								<span class="product_price"><?php echo format_currency($product->price); ?></span>
-							<?php endif;?>
-						</span>
-					</h2>
-				</div>
-			</div>
-		</div>
 		
-		<div class="row">
-			<div class="span8">
-				<?php echo $product->excerpt;?>
-			</div>
-		</div>
 		
-		<div class="row" style="margin-top:15px; margin-bottom:15px;">
-			<div class="span4 sku-pricing">
-				<?php if(!empty($product->sku)):?><div><?php echo lang('sku');?>: <?php echo $product->sku; ?></div><?php endif;?>&nbsp;
-			</div>
-			<?php if((bool)$product->track_stock && $product->quantity < 1):?>
-			<div class="span4 out-of-stock">
-				<div>Out of Stock</div>
-			</div>
-			<?php endif;?>
-		</div>
+		
+		
+		
 		
 		<div class="row">
 			<div class="span8">
 				<div class="product-cart-form">
-					<?php echo form_open('cart/add_to_cart', 'class="form-horizontal"');?>
+					<?php echo form_open('cart/add_to_cart', 'style="padding-left:30px"');?>
 					<input type="hidden" name="cartkey" value="<?php echo $this->session->flashdata('cartkey');?>" />
 					<input type="hidden" name="id" value="<?php echo $product->id?>"/>
 					<fieldset>
@@ -257,7 +303,7 @@
 					<?php endif;?>
 					
 					<div class="control-group">
-						<label class="control-label"><?php echo lang('quantity') ?></label>
+						
 						<div class="controls">
 							<?php if($this->config->item('allow_os_purchase') || !(bool)$product->track_stock || $product->quantity > 0) : ?>
 								<?php if(!$product->fixed_quantity) : ?>
@@ -294,10 +340,7 @@
 		
 	</form>
 	<div class="tabs">
-		<ul>
-			<li><a href="#description_tab"><?php echo lang('tab_description');?></a></li>
-			<?php if(!empty($product->related)):?><li><a href="#related_tab"><?php echo lang('tab_related_products');?></a></li><?php endif;?>
-		</ul>
+		
 
 		
 		<?php if(!empty($product->related)):?>
@@ -376,7 +419,7 @@
 
 </div>
 </div>
-</section>
+</section></span>
 
 <script type="text/javascript"><!--
 $(function(){ 

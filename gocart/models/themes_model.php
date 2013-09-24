@@ -110,6 +110,14 @@
 			return $return;
 		}
 		
+		function get_author($id) {
+		
+			$this->db->where('id', $id);
+			$result = $this -> db -> get('customers');
+			$return = $result -> result();
+
+			return $return;
+		}
 		
 
 	}

@@ -28,11 +28,20 @@
 			
 			
 		}
+		function get_rate($customer_id)
+		{
+			$this->db->where('id', $customer_id);
+			$result = $this -> db -> get('customers');
 
+			$customer = $result -> row();
+
+			return $customer -> rate;
+		}
 		function save_earnings($order_id, $product_owner, $item_id, $total, $referrer_id)
 		{
-
-			$rate = 0.55;
+			
+			$rate = $this->get_rate($product_owner);
+			
 			if ($referrer_id > 0)
 			{
 				$affiliate_rate = 0.1;
@@ -74,5 +83,7 @@
 
 			return $customer -> referred_by;
 		}
+		
+		
 
 	}
