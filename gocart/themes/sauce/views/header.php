@@ -4,6 +4,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title><?php echo (isset($seo_title))?$seo_title:$this->config->item('company_name'); ?></title>
@@ -17,7 +18,7 @@
 <?php endif;?>
 <meta name="google-site-verification" content="nbDyLT7jznwj4egEpTqoKISexYJWG0v1rVyXj-cw_80" />
 
-<?php echo theme_css('theme_venera_blue.css', true);?>
+<?php echo theme_css('theme_custom.css', true);?>
 <?php echo theme_css('markdown.css', true);?>
 <?php echo theme_css('styles.css', true);?>
 
@@ -36,7 +37,7 @@
 
   <link href="http://fonts.googleapis.com/css?family=Abel:400|Oswald:300,400,700" media="all" rel="stylesheet" type="text/css" />
   <link href="http://fonts.googleapis.com/css?family=Source Sans Pro&subset=latin" rel="stylesheet" type="text/css">
-  <script>
+ <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

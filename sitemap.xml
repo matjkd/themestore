@@ -19,6 +19,14 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
+  <loc>http://bootstrapsauce.com/html</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/one-page</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
   <loc>http://bootstrapsauce.com/about</loc>
   <changefreq>daily</changefreq>
 </url>
@@ -47,19 +55,7 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://bootstrapsauce.com/product/flaty</loc>
-  <changefreq>daily</changefreq>
-</url>
-<url>
-  <loc>http://bootstrapsauce.com/product/redband</loc>
-  <changefreq>daily</changefreq>
-</url>
-<url>
   <loc>http://bootstrapsauce.com/product/respondo</loc>
-  <changefreq>daily</changefreq>
-</url>
-<url>
-  <loc>http://bootstrapsauce.com/product/optimum-responsive-template</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
@@ -67,7 +63,35 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
+  <loc>http://bootstrapsauce.com/product/crystal-clear</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
   <loc>http://bootstrapsauce.com/product/business-one-responsive-template</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/product/optimum-responsive-template</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/product/flaty</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/product/quickstart</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/product/crypton</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/product/business-gear</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/product/restaurant</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
@@ -87,7 +111,19 @@
   <changefreq>daily</changefreq>
 </url>
 <url>
+  <loc>http://bootstrapsauce.com/bootstrap-templates/business-gear</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/bootstrap-templates/crypton</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
   <loc>http://bootstrapsauce.com/bootstrap-templates/business-one-responsive-template</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/bootstrap-templates/quickstart</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
@@ -112,6 +148,22 @@
 </url>
 <url>
   <loc>http://bootstrapsauce.com/bootstrap-templates/xcloud</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/bootstrap-templates/restaurant</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/bootstrap-templates/crystal-clear</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/business-and-corporate/business-gear</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/business-and-corporate/crypton</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
@@ -140,6 +192,50 @@
 </url>
 <url>
   <loc>http://bootstrapsauce.com/business-and-corporate/xcloud</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/business-and-corporate/restaurant</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/business-and-corporate/crystal-clear</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/html/business-one-responsive-template</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/html/flaty</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/html/restaurant</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/html/crystal-clear</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/html/business-gear</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/html/crypton</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/html/quickstart</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/one-page/restaurant</loc>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://bootstrapsauce.com/one-page/quickstart</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>

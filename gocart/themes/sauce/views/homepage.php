@@ -23,7 +23,7 @@ include ('header.php');
               <div class='carousel-inner slider-w'>
                 <div class=' item'>
                   <div class='container'>
-                    <h1 class='slider-header'>Become an Affiliate</h1>
+                    <h1 class='slider-header'>Earn money as an <a href="<?=base_url()?>affiliates">Affiliate</a></h1>
                     <h2 class='slider-sub-header'>Earn 10% on all purchases made from your affiliate links, not just the first purchase.</h2>
                     <div class='cta'>
                       <a href="affiliates" class="btn btn-cta">Find Out More</a>
@@ -43,8 +43,9 @@ include ('header.php');
                 </div>
                 <div class='active item'>
                   <div class='container'>
-                    <h1 class='slider-header'>Buy and Sell Twitter Bootstrap templates here. </h1>
-                    <h2 class='slider-sub-header'>Bootstrap Sauce is a brand new template marketplace. Earn a minimum of 55% commission on all templates sold
+                    <h1 class='slider-header'>Make your websites awesome</h1>
+                    <h2 class='slider-sub-header'><a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> is an HTML5 &amp; CSS3 framework for frontend development. 
+                    	<br/>Impress your clients and visitors with our premium bootstrap themes and templates.
                     	</h2>
                     <div class='cta'>
                     	

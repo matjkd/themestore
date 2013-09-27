@@ -168,7 +168,7 @@
 	
 				<?php if(!$this->Customer_model->is_logged_in(false,false)): ?>
 					<input class="btn" type="submit" onclick="$('#redirect_path').val('checkout/login');" value="Login"/>
-					<input class="btn" type="submit" onclick="$('#redirect_path').val('checkout/register');" value="Register"/>
+					<input class="btn" type="submit" onclick="$('#redirect_path').val('secure/register');" value="Register"/>
 				<?php endif; ?>
 					<input class="btn" type="submit" value="<?php echo lang('form_update_cart');?>"/>
 					

@@ -12,9 +12,10 @@ $phone		= array('id'=>'bill_phone', 'class'=>'span3', 'name'=>'phone', 'value'=>
 <section class='section-wrapper post-w'>
 	<div class='container'>
 <div class="row" style="margin-top:50px;">
-	<div class="span6 offset3">
+	<div class="span6 offset3 white-card">
 		<div class="page-header">
-			<h1><?php echo lang('form_register');?></h1>
+			<h1>Register, it's free</h1>
+			<h5>Create an account to start buying or selling Bootstrap themes. </h5>
 		</div>
 		<?php echo form_open('secure/register'); ?>
 			<input type="hidden" name="submitted" value="submitted" />

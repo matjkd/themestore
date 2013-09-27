@@ -13,7 +13,7 @@ $(document).ready(function() {
 				padding : 15
 			}, 30);
 			$logo.stop().animate({
-				width : 300
+				width : 290
 			}, 30);
 		}
 

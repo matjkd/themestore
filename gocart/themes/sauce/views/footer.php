@@ -17,9 +17,17 @@
                     </div>
                     <div class='span4'>
                       
-                      <p>
-                      	
-                      </p>
+                     
+                      	<!-- AddThis Follow BEGIN -->
+ <h5 class='footer-header'>Follow Us</h5>
+<div class="addthis_toolbox addthis_32x32_style addthis_default_style">
+<a class="addthis_button_facebook_follow" addthis:userid="bootstrapsauce"></a>
+<a class="addthis_button_twitter_follow" addthis:userid="bootstrapsauce"></a>
+<a class="addthis_button_google_follow" addthis:userid="100100568020435972998"></a>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520a06c864d505e3"></script>
+<!-- AddThis Follow END -->
+                     
                     </div>
                   </div>
                 </div>
@@ -66,6 +74,7 @@
   });
 </script>
 <!-- AddThis Smart Layers END -->
+
 
            
             

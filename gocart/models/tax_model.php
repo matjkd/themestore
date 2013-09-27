@@ -19,9 +19,13 @@ Class Tax_model extends CI_Model
 		if($tax_type =='ship')
 		{
 			$this->address 	= @$customer['ship_address'];
+			//hack because we don't have addresses
+			$this->address 	= "";
 		} else {
 			// this will probably be the same anyway
 			$this->address 	= @$customer['bill_address'];
+			//hack because we don't have addresses
+			$this->address 	= "";
 		}
 	}
 	function get_country_tax_rate()

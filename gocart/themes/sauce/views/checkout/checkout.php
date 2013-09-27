@@ -225,7 +225,7 @@ function update_summary()
 		<div class="btn-group pull-right">
 			<?php if(!$this->Customer_model->is_logged_in(false, false)) : ?>
 				<input class="btn" type="button" onclick="window.location='<?php echo site_url('checkout/login');?>'" value="<?php echo lang('form_login');?>" />
-				<input class="btn" type="button" onclick="window.location='<?php echo site_url('checkout/register');?>'" value="<?php echo lang('register_now');?>"/>
+				<input class="btn" type="button" onclick="window.location='<?php echo site_url('secure/register');?>'" value="<?php echo lang('register_now');?>"/>
 			<?php endif;?>
 			<input class="btn" type="button" onclick="window.location='<?php echo base_url();?>'" value="<?php echo lang('continue_shopping');?>"/>
 		</div>

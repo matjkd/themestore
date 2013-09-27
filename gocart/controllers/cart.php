@@ -107,6 +107,11 @@ class Cart extends CI_Controller {
 		$this->load->view('contact', $data);
 	}
 	
+	function dxlink()
+	{
+		redirect('http://www.dxthemes.com?ref=96');
+	}
+	
 	function send_contact()
 	{
 		

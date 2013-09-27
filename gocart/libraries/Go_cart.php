@@ -1096,8 +1096,8 @@ class go_cart {
 		}
 		
 		$customer					= $this->_cart_contents['customer'];
-		$ship						= $customer['ship_address'];
-		$bill						= $customer['bill_address'];
+		$ship						= "";
+		$bill						= "";
 		
 		$save['company']			= $customer['company'];
 		$save['firstname']			= $customer['firstname']; 
@@ -1105,33 +1105,33 @@ class go_cart {
 		$save['phone']				= $customer['phone'];
 		$save['email']				= $customer['email'];
 		
-		$save['ship_company']		= $ship['company'];
-		$save['ship_firstname']		= $ship['firstname'];
-		$save['ship_lastname']		= $ship['lastname'];
-		$save['ship_email']			= $ship['email'];
-		$save['ship_phone']			= $ship['phone'];
-		$save['ship_address1']		= $ship['address1'];
-		$save['ship_address2']		= $ship['address2'];
-		$save['ship_city']			= $ship['city'];
-		$save['ship_zip']			= $ship['zip'];
-		$save['ship_zone']			= $ship['zone'];
-		$save['ship_zone_id']		= $ship['zone_id'];
-		$save['ship_country']		= $ship['country'];
-		$save['ship_country_id']	= $ship['country_id'];
+		$save['ship_company']		= "";
+		$save['ship_firstname']		= "";
+		$save['ship_lastname']		= "";
+		$save['ship_email']			= "";
+		$save['ship_phone']			= "";
+		$save['ship_address1']		= "";
+		$save['ship_address2']		= "";
+		$save['ship_city']			= "";
+		$save['ship_zip']			= "";
+		$save['ship_zone']			= "";
+		$save['ship_zone_id']		= "";
+		$save['ship_country']		= "";
+		$save['ship_country_id']	="";
 		
-		$save['bill_company']		= $bill['company'];
-		$save['bill_firstname']		= $bill['firstname'];
-		$save['bill_lastname']		= $bill['lastname'];
-		$save['bill_email']			= $bill['email'];
-		$save['bill_phone']			= $bill['phone'];
-		$save['bill_address1']		= $bill['address1'];
-		$save['bill_address2']		= $bill['address2'];
-		$save['bill_city']			= $bill['city'];
-		$save['bill_zip']			= $bill['zip'];
-		$save['bill_zone']			= $bill['zone'];
-		$save['bill_zone_id']		= $bill['zone_id'];
-		$save['bill_country']		= $bill['country'];
-		$save['bill_country_id']	= $bill['country_id'];
+		$save['bill_company']		= "";
+		$save['bill_firstname']		= "";
+		$save['bill_lastname']		= "";
+		$save['bill_email']			= "";
+		$save['bill_phone']			= "";
+		$save['bill_address1']		= "";
+		$save['bill_address2']		= "";
+		$save['bill_city']			= "";
+		$save['bill_zip']			= "";
+		$save['bill_zone']			= "";
+		$save['bill_zone_id']		= "";
+		$save['bill_country']		= "";
+		$save['bill_country_id']	= "";
 		
 		//shipping information
 		$save['shipping_method']	= $this->_cart_contents['shipping']['method'];
